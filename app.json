@@ -4,9 +4,17 @@
     "slug": "practice-react-native",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/images/icon.png",
+    //Changes the icon style in
+    //shake the device to see the changes
+    "icon": "./assets/images/coffee-icon.png",
     "scheme": "practicereactnative",
     "userInterfaceStyle": "automatic",
+    //You can  see this image when its loaded in the phone not in web view
+    "splash": {
+      "image": "./assets/images/coffee-splash.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#000000"
+    },
     "newArchEnabled": true,
     "ios": {
       "supportsTablet": true
