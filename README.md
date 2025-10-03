@@ -1,50 +1,122 @@
-# Welcome to your Expo app 👋
+# 📱 React Native + TypeScript Crash Course
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+A **14-day journey** learning **React Native with TypeScript**. The goal is to practice mobile app development while reinforcing TypeScript concepts in just **1 hour per day**.
 
-## Get started
+---
 
-1. Install dependencies
+## 📅 Learning Schedule
 
-   ```bash
-   npm install
-   ```
+### 🔹 Week 1: Core React Native + TypeScript Basics
 
-2. Start the app
+- **Day 1:** Setup project with Expo + TypeScript. First "Hello World" app with typed props.
+- **Day 2:** `useState<number>` for a counter app.
+- **Day 3:** Event handlers with proper TypeScript typing.
+- **Day 4:** Styling with `StyleSheet.create()` and typed styles.
+- **Day 5:** Todo input with typed `Todo` interface.
+- **Day 6:** Render list using `FlatList<Todo>`.
+- **Day 7:** Mini Project #1 → **Todo App with TypeScript**.
 
-   ```bash
-   npx expo start
-   ```
+### 🔹 Week 2: API + Navigation + Project
 
-In the output, you'll find options to open the app in a
+- **Day 8:** Fetch data from API with typed response interface.
+- **Day 9:** Display API results in a typed `FlatList`.
+- **Day 10:** Install & configure React Navigation (`@react-navigation/native`).
+- **Day 11:** Create 2 screens (Home & Details) with typed navigation props.
+- **Day 12:** Pass parameters between screens with TypeScript-safe navigation.
+- **Day 13:** Integrate API + Navigation (fetch list → navigate to detail screen).
+- **Day 14:** Mini Project #2 → **Movie Search App (React Native + TS)**.
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+---
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
+## 🚀 Tech Stack
 
-## Get a fresh project
+- [React Native](https://reactnative.dev/) (Expo)
+- [TypeScript](https://www.typescriptlang.org/)
+- [React Navigation](https://reactnavigation.org/)
+- APIs (Pokémon API, TMDB API, etc.)
 
-When you're ready, run:
+---
 
-```bash
-npm run reset-project
+## 🗂️ Project Structure
+
+```
+my-app/
+├── src/
+│   ├── components/        # Reusable UI components
+│   ├── screens/           # Navigation screens
+│   ├── types/             # TypeScript interfaces & types
+│   ├── hooks/             # Custom hooks (if needed)
+│   └── utils/             # Helpers, constants
+├── App.tsx                # Main entry point
+└── README.md
 ```
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+---
 
-## Learn more
+## 🎯 Learning Goals
 
-To learn more about developing your project with Expo, look at the following resources:
+- Apply **React concepts** (state, props, hooks) in a **mobile context**.
+- Strengthen **TypeScript skills** by typing components, props, state, and API responses.
+- Build **two working projects**:
+  - ✅ Todo App with TypeScript
+  - ✅ Movie Search App (API + Navigation)
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
+---
 
-## Join the community
+## 📖 Progress Log
 
-Join our community of developers creating universal apps.
+- [ ] Day 1: Setup & Hello World
+- [ ] Day 2: Counter App
+- [ ] Day 3: Events & Handlers
+- [ ] Day 4: Styling
+- [ ] Day 5: Todo Input
+- [ ] Day 6: List Rendering
+- [ ] Day 7: Todo App (Mini Project #1)
+- [ ] Day 8: Fetch API Data
+- [ ] Day 9: API + FlatList
+- [ ] Day 10: Navigation Setup
+- [ ] Day 11: Multiple Screens
+- [ ] Day 12: Passing Params
+- [ ] Day 13: API + Navigation Integration
+- [ ] Day 14: Movie Search App (Mini Project #2)
 
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+---
+
+## 📌 Notes
+
+- Each day's work will be committed under a separate folder or branch for clear tracking.
+- TypeScript will be enforced from Day 1 (no `any` allowed 🚫).
+- The focus is **learning by building**, not memorizing theory.
+
+---
+
+## 📚 Resources
+
+- [React Native Documentation](https://reactnative.dev/docs/getting-started)
+- [TypeScript Handbook](https://www.typescriptlang.org/docs/handbook/intro.html)
+- [Expo Documentation](https://docs.expo.dev/)
+- [React Navigation Docs](https://reactnavigation.org/docs/getting-started)
+
+---
+
+## 🚀 Getting Started
+
+```bash
+# Install Expo CLI
+npm install -g expo-cli
+
+# Create new project with TypeScript
+npx create-expo-app my-app --template expo-template-blank-typescript
+
+# Navigate to project
+cd my-app
+
+# Start development server
+npm start
+```
+
+---
+
+## 📄 License
+
+This project is for educational purposes.
