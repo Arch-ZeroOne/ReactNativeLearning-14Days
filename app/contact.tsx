@@ -1,12 +1,12 @@
 import { View, Text, ImageBackground, StyleSheet } from "react-native";
 import React from "react";
-import ShopBackground from "../../assets/images/explore-coffee.jpeg";
+import ShopBackground from "../assets/images/explore-coffee.jpeg";
 
 const explore = () => {
   return (
     <View style={styles.container}>
       <ImageBackground source={ShopBackground} style={styles.image}>
-        <Text style={styles.text}>Explore</Text>
+        <Text style={styles.text}>Contact Us</Text>
       </ImageBackground>
     </View>
   );
