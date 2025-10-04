@@ -15,6 +15,10 @@ export const unstable_settings = {
   anchor: "(tabs)",
 };
 
+//! Important Notes
+//* groups -> are for organizations for large projects
+//* (tabs) -> refers to the (tabs) folder
+//* contact -> refers to the contact file
 export default function RootLayout() {
   const colorScheme = useColorScheme();
 
@@ -22,11 +26,18 @@ export default function RootLayout() {
     <ThemeProvider value={colorScheme === "dark" ? DarkTheme : DefaultTheme}>
       <Stack>
         <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
-        <Stack.Screen name="index" options={{ title: "Home" }} />
-        <Stack.Screen name="contact" options={{ title: "Contact Us" }} />
+        {/* <Stack.Screen name="(coffee)" options={{ headerShown: false }} /> */}
+        {/* <Stack.Screen
+          name="index"
+          options={{ title: "Home", headerShown: false }}
+        />
+        <Stack.Screen name="contact" options={{ title: "Contact Us" }} /> */}
         <Stack.Screen
           name="modal"
-          options={{ presentation: "modal", title: "Modal" }}
+          options={{
+            presentation: "modal",
+            title: "Modal",
+          }}
         />
       </Stack>
       <StatusBar style="auto" />

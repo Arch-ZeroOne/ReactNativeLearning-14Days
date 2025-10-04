@@ -7,7 +7,7 @@ import {
 } from "react-native";
 import { Link } from "expo-router";
 import React from "react";
-import icedCoffeeImage from "../assets/images/iced-coffee.png";
+import icedCoffeeImage from "../../assets/images/iced-coffee.png";
 //TODO Explore the explore.tsx file and apply what is here
 const app = () => {
   return (
