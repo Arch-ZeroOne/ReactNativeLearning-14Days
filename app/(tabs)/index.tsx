@@ -5,13 +5,9 @@ import icedCoffeeImage from "../../assets/images/iced-coffee.png";
 const app = () => {
   return (
     <View style={style.container}>
-      <ImageBackground
-        source={icedCoffeeImage}
-        resizeMode="cover"
-        style={style.image}
-      >
+      <ImageBackground source={icedCoffeeImage} style={style.image}>
         <Text style={style.text}>Coffee Shop</Text>
-      </ImageBackground>  
+      </ImageBackground>
     </View>
   );
 };

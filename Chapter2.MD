@@ -1,4 +1,4 @@
-# Day 2 — React Native + TypeScript Learning Log
+# Chapter 2 — React Native + TypeScript Learning Log
 
 This README collects the questions asked and their solutions for **Day 2** of learning React Native with TypeScript.
 
@@ -195,3 +195,162 @@ Also set up `tsconfig.json` paths.
 - Expo `splash` config must be added manually.
 
 This file serves as a quick **review reference** for Day 2 errors and solutions.
+
+# React Native + TypeScript — Chapter 2 Continuation
+
+This file continues from **Day 1** and documents your Day 2 questions, explanations, and multiple solution approaches for each topic.
+
+---
+
+## 🧩 1. Adding Another Declaration (e.g. JPEG) in `declaration.d.ts`
+
+### ❓ Question:
+
+> How to add another declaration in `declaration.d.ts`, for example, I want to add JPEG.
+
+### 💡 Explanation:
+
+TypeScript doesn’t know how to handle static assets like `.png`, `.jpg`, or `.jpeg` files by default. You must declare them manually so TypeScript recognizes imports such as `import image from '@assets/images/photo.jpeg'`.
+
+### ✅ Possible Implementations:
+
+#### **1. Add another `declare module` block**
+
+```ts
+// declaration.d.ts
+declare module "*.png" {
+  const value: any;
+  export default value;
+}
+
+declare module "*.jpeg" {
+  const value: any;
+  export default value;
+}
+```
+
+✅ Clean and explicit — good for few extensions.
+
+---
+
+#### **2. Combine multiple file extensions in one declaration**
+
+```ts
+declare module "*.{png,jpg,jpeg}" {
+  const value: any;
+  export default value;
+}
+```
+
+✅ Compact and easier if you have many image formats.
+❌ Slightly less readable.
+
+---
+
+#### **3. Use wildcard fallback**
+
+```ts
+declare module "*";
+```
+
+✅ Works for all unknown modules (images, SVGs, etc.)
+❌ Too broad — TypeScript won’t catch typos or missing files.
+
+---
+
+## 🧩 2. Understanding `flex: 1` and `flexDirection: 'column'`
+
+### ❓ Question:
+
+> What does `flex: 1` do and why do we set `flexDirection: 'column'` in `<View>`?
+
+### 💡 Explanation:
+
+React Native uses Flexbox for layout. `flex: 1` tells a view to **expand to fill available space**, and `flexDirection: 'column'` arranges child elements **vertically**.
+
+### ✅ Key Details:
+
+- `flex: 1` → Makes a view grow to fill its parent.
+- `flexDirection: 'column'` → Stacks children vertically (default in RN).
+
+### ✅ Example:
+
+```tsx
+<View style={{ flex: 1, flexDirection: "column" }}>
+  <Header />
+  <Body />
+  <Footer />
+</View>
+```
+
+### 🔧 Alternative Implementations:
+
+1. **Vertical layout (default)** — Stack top to bottom.
+2. **Horizontal layout** (`flexDirection: 'row'`) — Side-by-side.
+3. **Nested flex views** — Combine multiple views with different `flex` ratios.
+
+| Property                  | Purpose              | Effect                 |
+| ------------------------- | -------------------- | ---------------------- |
+| `flex: 1`                 | Expand to fill space | Makes the view stretch |
+| `flexDirection: 'column'` | Stack vertically     | Default layout         |
+| `flexDirection: 'row'`    | Stack horizontally   | Row layout             |
+
+---
+
+## 🖼️ 3. Understanding `resizeMode: 'cover'`
+
+### ❓ Question:
+
+> What does `resizeMode: 'cover'` do?
+
+### 💡 Explanation:
+
+`resizeMode` defines how an image scales to fit its container. `cover` means the image scales **uniformly** to **completely fill** the container — cropping any overflow.
+
+### ✅ Example:
+
+```tsx
+<Image
+  source={require("@assets/images/iced-coffee.png")}
+  style={{ width: 200, height: 200 }}
+  resizeMode="cover"
+/>
+```
+
+✅ The image fills the 200x200 box, maintaining aspect ratio but cropping edges.
+
+### 🔧 Other `resizeMode` Options:
+
+| Mode      | Scales | Keeps Ratio | Fills Box | Crops | Common Use            |
+| --------- | ------ | ----------- | --------- | ----- | --------------------- |
+| `cover`   | ✅     | ✅          | ✅        | ✅    | Backgrounds, banners  |
+| `contain` | ✅     | ✅          | ❌        | ❌    | Logos, product images |
+| `stretch` | ✅     | ❌          | ✅        | ❌    | Patterns, textures    |
+| `center`  | ❌     | ✅          | ❌        | ❌    | Icons                 |
+| `repeat`  | ✅     | ✅          | ✅        | ❌    | Textures, tiles       |
+
+### ✅ Example with `ImageBackground`
+
+```tsx
+<ImageBackground
+  source={require("@assets/images/iced-coffee.png")}
+  resizeMode="cover"
+  style={{ flex: 1 }}
+>
+  <Text style={{ color: "#fff" }}>Welcome to Coffee App</Text>
+</ImageBackground>
+```
+
+✅ Perfect for full-screen backgrounds without distortion.
+
+---
+
+### ✅ Summary for Day 2
+
+- Declaring additional image types helps TypeScript understand static assets.
+- `flex: 1` + `flexDirection: 'column'` defines flexible and vertical layouts.
+- `resizeMode: 'cover'` fills containers neatly, cropping extra parts.
+
+---
+
+**Next Topic for Day 3:** Handling Navigation Props and Passing Parameters Safely in TypeScript (React Naviga
